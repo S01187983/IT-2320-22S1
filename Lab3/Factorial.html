@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>Lab 3 - functions</title> 
+	<script>
+		"use strict";
+		var $ = function(id) { 
+		    return document.getElementById(id); 
+		};
+		function calcFactorial(myNum) { 
+			// calculate the factorial and return that value
+			var fact = myNum;
+			for(var f = myNum - 1; f > 1; f--)
+			{
+				fact = fact * f;				
+			}
+			return fact;
+		}
+		function calculate() { 
+			// get the number entered into the text box myNum
+			var myNum = $("myNum").value;
+			// call the factorial function
+			var myFact = calcFactorial(myNum);
+            // calculate the square of the number
+			var mySquare = myNum * myNum;
+            // display those values in the proper place in the HTML 
+			//$("mySquare").textContent
+			$("mySquare").value = mySquare;
+			$("myFactorial").value = myFact;
+		}
+		window.onload = function() {
+		    $("goCalculate").onclick = calculate; 
+			$("myNum").focus();
+		}; 
+	</script>
+</head> 
+<body>
+	<main>
+		<h2>Josef Overton - IT 2320 - Lab 3</h2>
+		<h2>Enter a Number for Calculation</h1> 
+		<label for="myNum">My Number Is:</label>
+		<input type="text" id="myNum"><br>
+		<br/>
+		<!-- display the squre here -->
+		<label for="mySquare">My Number Squared:</label> 
+		<input type="text" id="mySquare" disabled><br> 
+		<br/>
+		<!-- display the factorial here -->
+		<label for="">My Factorial</label> 
+		<input type="text" id="myFactorial" disabled><br> 
+		<br/>
+		<label>&nbsp;</label>
+		<input type="button" id="goCalculate" value="GO"><br> 
+	</main> 
+</body>  
+</html>
