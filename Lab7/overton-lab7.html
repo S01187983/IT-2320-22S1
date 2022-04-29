@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function walk()
+    {
+        $("#guy").fadeIn(1000);
+        $("#guy").animate({left: $(window).width() - 400}, 3000, function() {$("#guy").css("transform", "scaleX(-1)");});
+        $("#guy").animate({left: 0}, 3000);
+        $("#guy").fadeOut(1000, function() {$("#guy").css("transform", "scaleX(1)");});
+    }
+</script>
+<title>Josef Overton - IT 2320 - Lab 7</title>
+</head>
+<body>
+    <h2>Josef Overton - IT 2320 - Lab 7</h2>
+    <button type="button" id="start" onclick="walk()">Start</button><br>
+    <img src="guy-walking.gif" alt="Guy walking" id="guy" style="position: relative; display: none;">
+</body>
+</html>
